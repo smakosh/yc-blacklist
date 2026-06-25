@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Pages
+
+# Continuous deploy so a merged submission ships automatically.
+#
+# To enable:
+#   1. Add repository secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
+#      (Settings → Secrets and variables → Actions).
+#   2. Add a repository variable CF_DEPLOY = true.
+# Until then this job is skipped (never fails a build).
+#
+# Alternatively, connect the repo in the Cloudflare Pages dashboard and skip
+# this workflow entirely.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.CF_DEPLOY == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=yc-blacklist --branch=main

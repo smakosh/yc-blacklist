@@ -58,8 +58,8 @@ export function Home() {
       {/* ---------------- HERO ---------------- */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="grid-paper pointer-events-none absolute inset-0 opacity-60" />
-        <div className="pointer-events-none absolute -right-24 top-12 hidden rotate-[8deg] md:block">
-          <div className="stamp px-6 py-3 text-2xl font-extrabold tracking-[0.2em]">
+        <div className="pointer-events-none absolute right-4 top-10 hidden rotate-[7deg] md:block lg:right-8">
+          <div className="stamp px-4 py-2.5 text-xl font-extrabold tracking-[0.15em] lg:px-6 lg:py-3 lg:text-2xl">
             DO NOT ENGAGE
           </div>
         </div>

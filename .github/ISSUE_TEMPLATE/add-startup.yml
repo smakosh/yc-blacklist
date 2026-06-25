@@ -1,0 +1,90 @@
+name: "🚩 Report a startup"
+description: "Nominate a Y Combinator startup for the registry. A maintainer will turn this into a pull request."
+title: "[Add] <Company name>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. **Every claim needs a source a stranger can verify.**
+        Unsourced or purely personal grievances will be closed. No private individuals, no doxxing.
+        Read the [contribution rules](../blob/main/CONTRIBUTING.md) first.
+  - type: input
+    id: name
+    attributes:
+      label: Company name
+      placeholder: Acme Co
+    validations:
+      required: true
+  - type: input
+    id: batch
+    attributes:
+      label: YC batch
+      description: "Format: W21, S23, etc. Leave blank if unknown."
+      placeholder: W21
+    validations:
+      required: false
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://acme.example
+    validations:
+      required: false
+  - type: dropdown
+    id: verdicts
+    attributes:
+      label: Which warnings apply?
+      multiple: true
+      options:
+        - "Don't work for (employer)"
+        - "Don't use (product)"
+        - "Don't pay for (customer)"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "high — severe / ongoing harm"
+        - "medium — elevated concern"
+        - "low — caution"
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: One-sentence summary
+      placeholder: "What, in one line, is the problem?"
+    validations:
+      required: true
+  - type: textarea
+    id: reasons
+    attributes:
+      label: The case against
+      description: "List each concern and a link that backs it up. One per line."
+      placeholder: |
+        - Withheld final contractor payments — https://link-to-proof
+        - Pattern of identical Glassdoor reports — https://link
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: "Comma-separated, e.g. wage-theft, dark-patterns, layoffs"
+      placeholder: wage-theft, layoffs
+    validations:
+      required: false
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Ground rules
+      options:
+        - label: "Every claim above links to a verifiable source."
+          required: true
+        - label: "This is about a company, not a private individual."
+          required: true
+        - label: "I understand entries can be disputed and corrected by anyone."
+          required: true

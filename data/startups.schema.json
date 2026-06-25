@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://yc-blacklist.pages.dev/data/startups.schema.json",
+  "title": "YC Blacklist database",
+  "type": "object",
+  "required": ["startups"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "updatedAt": {
+      "type": "string",
+      "description": "ISO date (YYYY-MM-DD) the dataset was last touched."
+    },
+    "startups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/startup" }
+    }
+  },
+  "$defs": {
+    "startup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "verdicts",
+        "severity",
+        "summary",
+        "reasons",
+        "dateAdded"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Unique kebab-case slug. Used in the URL."
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "ycBatch": {
+          "type": "string",
+          "description": "Y Combinator batch, e.g. W21, S23. Empty if unknown.",
+          "pattern": "^$|^[WS][0-9]{2}$"
+        },
+        "website": {
+          "type": "string",
+          "description": "Company website. Empty string allowed.",
+          "pattern": "^$|^https?://.+"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "acquired", "defunct", "unknown"]
+        },
+        "verdicts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Which warnings apply: don't work-for / use / pay-for.",
+          "items": { "type": "string", "enum": ["work", "use", "pay"] }
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 280,
+          "description": "One-sentence reason this entry exists."
+        },
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Specific, sourced concerns. Real entries must cite sources.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim"],
+            "properties": {
+              "claim": { "type": "string", "minLength": 1 },
+              "detail": { "type": "string" },
+              "sources": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dateAdded": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "submittedBy": {
+          "type": "string",
+          "description": "GitHub handle of the contributor (without @)."
+        },
+        "example": {
+          "type": "boolean",
+          "description": "True for illustrative sample rows shipped with the repo."
+        }
+      }
+    }
+  }
+}

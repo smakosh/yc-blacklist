@@ -1,0 +1,157 @@
+{
+  "$schema": "./startups.schema.json",
+  "updatedAt": "2026-06-25",
+  "startups": [
+    {
+      "id": "nimbusforge",
+      "name": "NimbusForge",
+      "ycBatch": "W21",
+      "website": "https://example.com",
+      "status": "active",
+      "verdicts": ["work", "pay"],
+      "severity": "high",
+      "summary": "Illustrative sample entry: ran a permanent unpaid 'trial week', then withheld final paychecks from contractors.",
+      "reasons": [
+        {
+          "claim": "Unpaid 'trial weeks' used as free labor",
+          "detail": "Sample scenario showing the data shape. Candidates were asked to complete a full week of production work unpaid before an offer that rarely materialized.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        },
+        {
+          "claim": "Final invoices left unpaid",
+          "detail": "Demonstrates how a 'pay' verdict is justified with documentation in a real entry.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["unpaid-work", "wage-theft", "contractors"],
+      "dateAdded": "2026-06-20",
+      "submittedBy": "maintainers",
+      "example": true
+    },
+    {
+      "id": "payloop",
+      "name": "PayLoop",
+      "ycBatch": "S20",
+      "website": "https://example.com",
+      "status": "active",
+      "verdicts": ["pay", "use"],
+      "severity": "high",
+      "summary": "Illustrative sample entry: dark-pattern billing that makes cancellation nearly impossible and keeps charging after 'cancel'.",
+      "reasons": [
+        {
+          "claim": "Cancellation flow is a maze",
+          "detail": "Sample: the cancel button is hidden behind a support-ticket queue with multi-day SLAs, while billing continues monthly.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        },
+        {
+          "claim": "Charges continue after confirmed cancellation",
+          "detail": "Sample illustrating a 'use' + 'pay' verdict combination.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["dark-patterns", "billing", "hard-to-cancel"],
+      "dateAdded": "2026-06-18",
+      "submittedBy": "maintainers",
+      "example": true
+    },
+    {
+      "id": "hustlrhq",
+      "name": "HustlrHQ",
+      "ycBatch": "W23",
+      "website": "https://example.com",
+      "status": "active",
+      "verdicts": ["work"],
+      "severity": "medium",
+      "summary": "Illustrative sample entry: '90-hour weeks are the minimum' culture with rapid burnout and high first-year attrition.",
+      "reasons": [
+        {
+          "claim": "Mandatory crunch framed as 'mission'",
+          "detail": "Sample scenario: weekend work expected by default; PTO discouraged in practice.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["burnout", "crunch", "culture"],
+      "dateAdded": "2026-06-15",
+      "submittedBy": "maintainers",
+      "example": true
+    },
+    {
+      "id": "datakraken",
+      "name": "DataKraken",
+      "ycBatch": "S19",
+      "website": "https://example.com",
+      "status": "acquired",
+      "verdicts": ["use"],
+      "severity": "high",
+      "summary": "Illustrative sample entry: quietly resold customer data and suffered an unreported breach.",
+      "reasons": [
+        {
+          "claim": "Customer data resold to third parties",
+          "detail": "Sample: usage telemetry sold to data brokers without meaningful consent.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        },
+        {
+          "claim": "Breach disclosed months late",
+          "detail": "Sample illustrating a privacy/security-driven 'use' verdict.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["privacy", "data-breach", "trust"],
+      "dateAdded": "2026-06-10",
+      "submittedBy": "maintainers",
+      "example": true
+    },
+    {
+      "id": "brightwaveai",
+      "name": "Brightwave Labs",
+      "ycBatch": "W24",
+      "website": "https://example.com",
+      "status": "active",
+      "verdicts": ["use", "pay"],
+      "severity": "medium",
+      "summary": "Illustrative sample entry: 'AI' product is mostly manual offshore labor; outcomes and pricing are misrepresented.",
+      "reasons": [
+        {
+          "claim": "'AI' is humans behind a curtain",
+          "detail": "Sample: marketed as autonomous, actually a queue of human operators with unpredictable turnaround.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        },
+        {
+          "claim": "Misleading usage-based pricing",
+          "detail": "Sample illustrating overage charges that don't match the advertised model.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["ai-washing", "misleading-claims", "pricing"],
+      "dateAdded": "2026-06-05",
+      "submittedBy": "maintainers",
+      "example": true
+    },
+    {
+      "id": "quotient-health",
+      "name": "Quotient Health",
+      "ycBatch": "S22",
+      "website": "https://example.com",
+      "status": "defunct",
+      "verdicts": ["work", "use", "pay"],
+      "severity": "high",
+      "summary": "Illustrative sample entry: shut down overnight, stranding customers' paid annual plans and laying off staff without notice.",
+      "reasons": [
+        {
+          "claim": "Sudden shutdown, no refunds",
+          "detail": "Sample: annual subscribers lost access mid-term with no refunds issued.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        },
+        {
+          "claim": "Layoffs with unpaid final wages",
+          "detail": "Sample showing why all three verdicts can apply to one company.",
+          "sources": ["https://github.com/smakosh/yc-blacklist#how-entries-are-sourced"]
+        }
+      ],
+      "tags": ["shutdown", "no-refunds", "layoffs"],
+      "dateAdded": "2026-05-28",
+      "submittedBy": "maintainers",
+      "example": true
+    }
+  ]
+}

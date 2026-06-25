@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "📖 Contribution rules"
+    url: https://github.com/smakosh/yc-blacklist/blob/main/CONTRIBUTING.md
+    about: "How entries are sourced, reviewed, and disputed. Read before submitting."
+  - name: "✏️ Edit the database directly"
+    url: https://github.com/smakosh/yc-blacklist/edit/main/data/startups.json
+    about: "Comfortable with a pull request? Edit data/startups.json yourself."

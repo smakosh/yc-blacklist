@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#221d18" />
+  <!-- hazard tape top -->
+  <rect width="1200" height="26" y="0" fill="url(#tape)" />
+  <rect width="1200" height="26" y="604" fill="url(#tape)" />
+  <!-- grid -->
+  <g opacity="0.05" stroke="#ECE8E1">
+    <path d="M0 130 H1200 M0 230 H1200 M0 330 H1200 M0 430 H1200 M0 530 H1200" />
+    <path d="M200 0 V630 M400 0 V630 M600 0 V630 M800 0 V630 M1000 0 V630" />
+  </g>
+  <!-- mark -->
+  <g transform="translate(80,96)">
+    <rect width="56" height="56" rx="10" fill="#f3b51f" />
+    <circle cx="28" cy="28" r="15" fill="none" stroke="#221d18" stroke-width="6" />
+    <line x1="18" y1="38" x2="38" y2="18" stroke="#221d18" stroke-width="6" stroke-linecap="round" />
+    <text x="76" y="38" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="26" letter-spacing="4" fill="#ECE8E1">YC BLACKLIST</text>
+  </g>
+  <!-- headline -->
+  <g font-family="'Arial Black',Arial,sans-serif" font-weight="900" letter-spacing="-1">
+    <text x="78" y="296" font-size="104" fill="#ECE8E1">Don't <tspan fill="#f3b51f">work for</tspan> them.</text>
+    <text x="78" y="404" font-size="104" fill="#ECE8E1">Don't <tspan fill="#f3b51f">use</tspan> them.</text>
+    <text x="78" y="512" font-size="104" fill="#ECE8E1">Don't <tspan fill="#f3b51f">pay</tspan> them.</text>
+  </g>
+  <!-- caption -->
+  <text x="80" y="566" font-family="'JetBrains Mono',monospace,Arial" font-size="20" letter-spacing="3" fill="#a89f92">THE OPEN, SOURCED REGISTRY OF YC STARTUPS TO AVOID · CONTRIBUTE ON GITHUB</text>
+  <defs>
+    <pattern id="tape" width="52" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="52" height="26" fill="#f3b51f" />
+      <path d="M0 0 L26 0 L0 26 Z" fill="#221d18" />
+      <path d="M52 0 L52 26 L26 26 Z" fill="#221d18" />
+    </pattern>
+  </defs>
+</svg>
